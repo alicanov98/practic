@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.scss';
+import { Button } from './components/Buttons/Button';
+import { List } from './components/List/List';
+import React, { useState } from "react";
+
+const items=["el1","el2","el3","el4"]
 function App() {
+
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <List data = {items}/>
+     <butto></butto>
+     <Button name="-" onClick={() => setCount(count - 1)}/>
+     <span>{count}</span>
+     <Button name="+" onClick={() => setCount(count + 1)}/>
     </div>
   );
 }
